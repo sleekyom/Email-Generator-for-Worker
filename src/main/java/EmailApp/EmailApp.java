@@ -6,5 +6,7 @@ public class EmailApp {
         Email email = new Email("Emmanuel", "Kolawole");
         System.out.println(email.showInfo());
 
+        email.writeFile("C:\\Users\\olamide\\Documents\\EmailApp\\Generated Email.txt",email.showInfo());
+
     }
 }

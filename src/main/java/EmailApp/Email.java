@@ -1,5 +1,8 @@
 package EmailApp;
 
+import java.io.File;
+import java.io.FileWriter;
+import java.io.PrintWriter;
 import java.util.Scanner;
 
 public class Email {
@@ -97,5 +100,19 @@ public class Email {
         return "DISPLAY NAME : " + firstname + " " + lastname +
                 "\nCOMPANY EMAIL : " + email +
                 "\nMAILBOX CAPACITY : " + mailboxCapacity + "mb";
+    }
+
+    public void writeFile(String filepath, String generatedMail) {
+        try {
+            File file = new File(filepath);
+            FileWriter fileWriter = new FileWriter(file);
+            PrintWriter printWriter = new PrintWriter(fileWriter);
+
+            printWriter.println(generatedMail);
+            printWriter.close();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
