@@ -1,11 +1,19 @@
 package EmailApp;
 
+import javax.persistence.*;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.PrintWriter;
 import java.util.Scanner;
 
+
+@Entity
+@Table(name = "UserEmail")
 public class Email {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column
     private String firstname;
     private String lastname;
     private String password;
